@@ -3,7 +3,7 @@
  * @Autor: J.L
  * @Date: 2021-05-06 23:05:46
  * @LastEditors: J.L
- * @LastEditTime: 2021-05-06 23:20:32
+ * @LastEditTime: 2021-05-07 00:03:07
 -->
 <template>
   <el-select
@@ -20,7 +20,7 @@
     @remove-tag="handleRemoveTag">
     
     <!-- 设置一个空option 不然selectData为空下拉不显示 -->
-    <el-option hidden value="" label="" key="s1"></el-option>
+    <el-option key="s1" hidden value=""  label=""></el-option>
     <el-option hidden v-for="(item, index) in selectData" :value="item[cId]" :label="item[cLabel]" :key="'s2'+index"></el-option>
     
     <el-tree
@@ -56,7 +56,7 @@ export default {
       multiple: Boolean, // 默认 false
       clearable: Boolean, // 默认 false
       collapseTags: Boolean, // 默认 false
-      data: {  // tree数据
+      data: { // tree数据
         type: Array,
         default: () => {
           return []
@@ -75,16 +75,16 @@ export default {
         cLabel: this.defProps['label'],
       }
     },
-    mounted () {
-      this.$nextTick(_ => {
-        if(!this.value) return 
-        this.setDefaultValue(this.value)
-      })
-    },
     watch: {
       value: function (v) {
         this.setDefaultValue(v)
       }
+    },
+    mounted () {
+      this.$nextTick( _ => {
+        if(!this.value) return 
+        this.setDefaultValue(this.value)
+      })
     },
     methods: {
       /**

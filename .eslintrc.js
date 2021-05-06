@@ -3,7 +3,7 @@
  * @Autor: J.L
  * @Date: 2021-04-11 12:05:53
  * @LastEditors: J.L
- * @LastEditTime: 2021-05-06 23:39:10
+ * @LastEditTime: 2021-05-07 00:02:14
  */
 module.exports = {
     root: true,
@@ -42,6 +42,18 @@ module.exports = {
         "object-curly-spacing": ['warn', 'never'], // 不允许大括号内有空格
         "space-before-function-paren": 0, // 禁止函数括号前的一个空格
         "no-multi-spaces": 1, //不允许出现多余的空格
+        "vue/html-self-closing": "off", // 自闭和标签
+        "vue/max-attributes-per-line": "off", // 属性换行
+        "vue/no-multi-spaces": "off", // 多空格
+        "vue/html-quotes": "off", // 单引号双引号
+        "vue/html-closing-bracket-spacing": "off",
+        "vue/mustache-interpolation-spacing": "off",
+        "vue/script-indent": "off",
+        "vue/singleline-html-element-content-newline": "off",
+        "vue/multiline-html-element-content-newline": "off",
+        "vue/attribute-hyphenation": "off", // 属性使用连字符 attr-xxx
+        "vue/attributes-order": "off", // 属性排序
+        "vue/require-default-prop": "off", // 默认值
     },
     overrides: [
         {
