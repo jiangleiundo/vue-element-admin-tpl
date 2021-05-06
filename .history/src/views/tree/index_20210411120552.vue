@@ -1,35 +1,26 @@
-<!--
- * @Description: 树形组件
- * @Autor: J.L
- * @Date: 2021-04-11 12:05:53
- * @LastEditors: J.L
- * @LastEditTime: 2021-05-06 23:36:56
--->
 <template>
   <div class="app-container">
-    <el-form>
-      <el-form-item label="多选">
-         <tree-select v-model="value" multiple collapse-tags :data="options"></tree-select>
-      </el-form-item>
-      <el-form-item label="单选">
-         <tree-select v-model="value2" :data="options"></tree-select>
-      </el-form-item>
-    </el-form>
+    <el-input v-model="filterText" placeholder="Filter keyword" style="margin-bottom:30px;" />
+
+    <el-tree
+      ref="tree2"
+      :data="data2"
+      :props="defaultProps"
+      :filter-node-method="filterNode"
+      class="filter-tree"
+      default-expand-all
+    />
+
   </div>
 </template>
 
 <script>
-import TreeSelect from '@/components/TreeSelect/index'
 export default {
-  name: 'Tree',
-  components: {
-    TreeSelect
-  },
+
   data() {
     return {
-      value: [],
-      value2: '',
-      options: [{
+      filterText: '',
+      data2: [{
         id: 1,
         label: 'Level one 1',
         children: [{
@@ -71,11 +62,16 @@ export default {
     }
   },
   watch: {
-
+    filterText(val) {
+      this.$refs.tree2.filter(val)
+    }
   },
 
   methods: {
-
+    filterNode(value, data) {
+      if (!value) return true
+      return data.label.indexOf(value) !== -1
+    }
   }
 }
 </script>

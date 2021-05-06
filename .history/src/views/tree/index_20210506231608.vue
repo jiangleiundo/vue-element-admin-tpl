@@ -1,20 +1,8 @@
-<!--
- * @Description: 树形组件
- * @Autor: J.L
- * @Date: 2021-04-11 12:05:53
- * @LastEditors: J.L
- * @LastEditTime: 2021-05-06 23:36:56
--->
 <template>
   <div class="app-container">
-    <el-form>
-      <el-form-item label="多选">
-         <tree-select v-model="value" multiple collapse-tags :data="options"></tree-select>
-      </el-form-item>
-      <el-form-item label="单选">
-         <tree-select v-model="value2" :data="options"></tree-select>
-      </el-form-item>
-    </el-form>
+    <tree-select v-model="value" multiple collapse-tags :data="options"></tree-select>
+
+    <tree-select v-model="value" :data="options"></tree-select>
   </div>
 </template>
 
@@ -27,8 +15,7 @@ export default {
   },
   data() {
     return {
-      value: [],
-      value2: '',
+      value: '',
       options: [{
         id: 1,
         label: 'Level one 1',
@@ -71,11 +58,16 @@ export default {
     }
   },
   watch: {
-
+    filterText(val) {
+      this.$refs.tree2.filter(val)
+    }
   },
 
   methods: {
-
+    filterNode(value, data) {
+      if (!value) return true
+      return data.label.indexOf(value) !== -1
+    }
   }
 }
 </script>

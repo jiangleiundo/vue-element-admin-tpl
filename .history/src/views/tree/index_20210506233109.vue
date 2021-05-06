@@ -3,7 +3,7 @@
  * @Autor: J.L
  * @Date: 2021-04-11 12:05:53
  * @LastEditors: J.L
- * @LastEditTime: 2021-05-06 23:36:56
+ * @LastEditTime: 2021-05-06 23:31:09
 -->
 <template>
   <div class="app-container">
@@ -27,7 +27,7 @@ export default {
   },
   data() {
     return {
-      value: [],
+      value: '',
       value2: '',
       options: [{
         id: 1,

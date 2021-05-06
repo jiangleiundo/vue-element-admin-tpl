@@ -3,12 +3,12 @@
  * @Autor: J.L
  * @Date: 2021-04-11 12:05:53
  * @LastEditors: J.L
- * @LastEditTime: 2021-05-06 23:36:56
+ * @LastEditTime: 2021-05-06 23:36:24
 -->
 <template>
   <div class="app-container">
     <el-form>
-      <el-form-item label="多选">
+      <el-form-item label="多选" width="230">
          <tree-select v-model="value" multiple collapse-tags :data="options"></tree-select>
       </el-form-item>
       <el-form-item label="单选">
