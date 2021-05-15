@@ -1,8 +1,8 @@
 <!--
  * @Description: dict-radio
- * @Author: Jiang Lei
+ * @Author: J.
  * @Date: 2021-03-31 14:16:18
- * @LastEditTime: 2021-04-28 10:21:50
+ * @LastEditTime: 2021-05-15 23:53:22
 -->
 <template>
   <el-radio-group v-model="curValue" @change="handleChange">
