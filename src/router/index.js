@@ -79,7 +79,19 @@ export const constantRoutes = [
         name: 'Tree',
         component: () => import('@/views/components/tree/index'),
         meta: {title: '树形选择', icon: 'tree'}
-      }
+      },
+      {
+        path: 'carousel',
+        name: 'Carousel',
+        component: () => import('@/views/components/carousel2/index'),
+        meta: {title: '轮播图', icon: 'tree'}
+      },
+      {
+        path: 'tabs',
+        name: 'tabs',
+        component: () => import('@/views/components/tabs/index'),
+        meta: {title: '切换按钮', icon: 'tree'}
+      },
     ]
   },
 
@@ -151,6 +163,12 @@ export const constantRoutes = [
         component: () => import('@/views/nested/menu2/index'),
         name: 'Menu2',
         meta: {title: 'menu2'}
+      },
+      {
+        path: 'img',
+        component: () => import('@/views/img/index'),
+        name: 'img',
+        meta: {title: 'image'}
       }
     ]
   },

@@ -2,8 +2,8 @@
  * @Description: 树形组件
  * @Autor: J.L
  * @Date: 2021-04-11 12:05:53
- * @LastEditors: J.L
- * @LastEditTime: 2021-05-07 00:03:32
+ * @LastEditors: J.
+ * @LastEditTime: 2022-02-25 00:27:07
 -->
 <template>
   <div class="app-container">
@@ -15,6 +15,11 @@
         <tree-select v-model="value2" :data="options"></tree-select>
       </el-form-item>
     </el-form>
+
+    <button @click="handleClick">测试</button>
+    <button @click="()=>{this.$myToast({img: 'http://onetribe.top/qt/picture/success.png', text: '成功', type: 'success'})}">成功</button>
+    <button @click="()=>{this.$myToast('警告')}">警告</button>
+    <button @click="()=>{this.$myToast('失败')}">错误或失败</button>
   </div>
 </template>
 
@@ -75,6 +80,9 @@ export default {
   },
 
   methods: {
+    handleClick() {
+
+    }
 
   }
 }

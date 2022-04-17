@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Author: J.
+ * @Date: 2021-04-11 12:05:53
+ * @LastEditors: J.
+ * @LastEditTime: 2022-02-25 00:24:44
+ */
 import Vue from 'vue'
 
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
@@ -12,8 +19,12 @@ import App from './App'
 import store from './store'
 import router from './router'
 
+import myToast from './components/Toast'
+
 import '@/icons' // icon
 import '@/permission' // permission control
+
+Vue.prototype.$myToast = myToast
 
 /**
  * If you don't want to use mock-server
@@ -24,12 +35,12 @@ import '@/permission' // permission control
  * please remove it before going online ! ! !
  */
 if (process.env.NODE_ENV === 'production') {
-  const { mockXHR } = require('../mock')
+  const {mockXHR} = require('../mock')
   mockXHR()
 }
 
 // set ElementUI lang to EN
-Vue.use(ElementUI, { locale })
+Vue.use(ElementUI, {locale})
 // 如果想要中文版 element-ui，按如下方式声明
 // Vue.use(ElementUI)
 
